@@ -1,0 +1,76 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "overlay",
+  "control-center-margin-top": 10,
+  "control-center-margin-bottom": 10,
+  "control-center-margin-right": 10,
+  "notification-icon-size": 48,
+  "timeout": 5,
+  "timeout-low": 3,
+  "timeout-critical": 0,
+  "control-center-width": 380,
+  "notification-window-width": 380,
+  "keyboard-shortcuts": true,
+  "transition-time": 200,
+  "hide-on-action": true,
+
+  "widgets": [
+    "title",
+    "dnd",
+    "buttons-grid",
+    "notifications"
+  ],
+
+  "widget-config": {
+    "title": {
+      "text": "Центр управления",
+      "clear-all-button": true,
+      "button-text": "Очистить"
+    },
+    "dnd": {
+      "text": "Не беспокоить"
+    },
+    "buttons-grid": {
+      "actions": [
+        {
+          "label": "󰤨 WiFi",
+          "command": "kitty -e nmtui"
+        },
+        {
+          "label": "󰂯 BT",
+          "command": "kitty -e bluetui"
+        },
+        {
+          "label": "󰕾 Звук",
+          "command": "kitty -e pulsemixer"
+        },
+        {
+          "label": "󰌌 Тема",
+          "command": "~/.local/bin/theme-menu"
+        },
+        {
+          "label": "⏻ Питание",
+          "command": "~/.local/bin/power-menu"
+        },
+        {
+          "label": "🚀 Произв.",
+          "command": "~/.local/bin/power-mode performance"
+        },
+        {
+          "label": "⚖ Баланс",
+          "command": "~/.local/bin/power-mode balanced"
+        },
+        {
+          "label": "🔋 Эконом",
+          "command": "~/.local/bin/power-mode power-saver"
+        }
+      ]
+    },
+    "notifications": {
+      "ignore-timeout": false,
+      "hide-latest": false
+    }
+  }
+}

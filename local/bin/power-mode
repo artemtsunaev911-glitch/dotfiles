@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+mode="${1:-balanced}"
+
+case "$mode" in
+  performance|balanced|power-saver)
+    powerprofilesctl set "$mode"
+    notify-send "Режим питания" "$mode" --icon=battery
+    ;;
+  *)
+    echo "Usage: power-mode [performance|balanced|power-saver]"
+    exit 1
+    ;;
+esac

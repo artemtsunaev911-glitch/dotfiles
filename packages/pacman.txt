@@ -1,0 +1,125 @@
+# -----------------------------
+# Core session / Hyprland
+# -----------------------------
+hyprland
+hyprlock
+hypridle
+waybar
+wofi
+swaync
+swayosd
+swww
+
+greetd
+greetd-tuigreet
+
+polkit
+hyprpolkitagent
+
+xdg-desktop-portal
+xdg-desktop-portal-hyprland
+xdg-desktop-portal-gtk
+xdg-user-dirs
+xdg-utils
+
+qt5-wayland
+qt6-wayland
+qt5ct
+qt6ct
+nwg-look
+
+# -----------------------------
+# Audio / Media
+# -----------------------------
+pipewire
+pipewire-alsa
+pipewire-pulse
+pipewire-jack
+wireplumber
+pavucontrol
+pamixer
+pulsemixer
+playerctl
+
+# -----------------------------
+# Network / Bluetooth / Power
+# -----------------------------
+networkmanager
+bluez
+bluez-utils
+power-profiles-daemon
+upower
+brightnessctl
+
+# -----------------------------
+# Notifications / clipboard / screenshots
+# -----------------------------
+libnotify
+grim
+slurp
+wl-clipboard
+cliphist
+
+# -----------------------------
+# Required apps
+# -----------------------------
+kitty
+fish
+helix
+yazi
+
+# -----------------------------
+# TUI / terminal quality of life
+# -----------------------------
+btop
+fastfetch
+bat
+eza
+fd
+fzf
+ripgrep
+jq
+zoxide
+tealdeer
+tmux
+lazygit
+trash-cli
+
+# -----------------------------
+# File handling / previews / mounts
+# -----------------------------
+udisks2
+udiskie
+gvfs
+7zip
+unrar
+unarchiver
+ffmpegthumbnailer
+poppler
+imagemagick
+
+# -----------------------------
+# Minimal viewers
+# -----------------------------
+mpv
+imv
+zathura
+zathura-pdf-mupdf
+
+# -----------------------------
+# Fonts / icons / cursors
+# -----------------------------
+ttf-jetbrains-mono-nerd
+ttf-nerd-fonts-symbols-mono
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+papirus-icon-theme
+adwaita-cursors
+
+# -----------------------------
+# Utils
+# -----------------------------
+git
+rsync
+pciutils

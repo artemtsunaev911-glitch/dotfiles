@@ -1,0 +1,50 @@
+[manager]
+show_hidden = true
+sort_by = "natural"
+sort_sensitive = false
+sort_dir_first = true
+linemode = "none"
+show_symlink = true
+scrolloff = 5
+
+[preview]
+tab_size = 2
+max_width = 1200
+max_height = 900
+cache_dir = ""
+
+[opener]
+edit = [
+  { run = 'hx "$@"', block = true, for = "unix" }
+]
+open = [
+  { run = 'xdg-open "$1"', orphan = true, for = "unix" }
+]
+play = [
+  { run = 'mpv "$@"', orphan = true, for = "unix" }
+]
+reveal = [
+  { run = 'xdg-open "$(dirname "$1")"', orphan = true, for = "unix" }
+]
+
+[open]
+rules = [
+  { name = "*.txt", use = "edit" },
+  { name = "*.md", use = "edit" },
+  { name = "*.json", use = "edit" },
+  { name = "*.toml", use = "edit" },
+  { name = "*.yaml", use = "edit" },
+  { name = "*.yml", use = "edit" },
+  { name = "*.rs", use = "edit" },
+  { name = "*.py", use = "edit" },
+  { name = "*.c", use = "edit" },
+  { name = "*.cpp", use = "edit" },
+  { name = "*.h", use = "edit" },
+  { name = "*.sh", use = "edit" },
+  { mime = "text/*", use = "edit" },
+  { mime = "image/*", use = "open" },
+  { mime = "video/*", use = "play" },
+  { mime = "audio/*", use = "play" },
+  { mime = "application/pdf", use = "open" },
+  { name = "*", use = "open" }
+]

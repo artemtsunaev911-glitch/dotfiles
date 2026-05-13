@@ -1,0 +1,8 @@
+@define-color base rgba(18,18,18,0.88);
+@define-color text rgba(235,235,235,1);
+@define-color subtext rgba(170,170,170,1);
+@define-color accent rgba(220,220,220,1);
+@define-color accent2 rgba(150,150,150,1);
+@define-color warning rgba(210,190,120,1);
+@define-color critical rgba(220,110,110,1);
+@define-color good rgba(150,200,150,1);

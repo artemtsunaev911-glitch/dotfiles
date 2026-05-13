@@ -1,0 +1,10 @@
+show=drun
+prompt=Запуск
+width=700
+height=420
+always_parse_args=true
+hide_scroll=true
+print_command=false
+layer=overlay
+insensitive=true
+allow_images=true

@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# ─────────────────────────────────────────────
+#  screenshot — делает скриншот и сохраняет
+#  в ~/Pictures/Screenshots + копирует в буфер
+# ─────────────────────────────────────────────
+
+SAVE_DIR="$HOME/Pictures/Screenshots"
+mkdir -p "$SAVE_DIR"
+
+TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
+FILE="$SAVE_DIR/screenshot_${TIMESTAMP}.png"
+
+case "${1:-full}" in
+  full)
+    grim "$FILE"
+    ;;
+  area)
+    grim -g "$(slurp)" "$FILE"
+    ;;
+  window)
+    # Скриншот активного окна
+    GEOM=$(hyprctl activewindow -j | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"')
+    grim -g "$GEOM" "$FILE"
+    ;;
+esac
+
+# Копируем в буфер обмена
+wl-copy < "$FILE"
+
+# Уведомление
+notify-send "Скриншот сохранён" "$FILE" --icon=image-x-generic

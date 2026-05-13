@@ -1,0 +1,79 @@
+* {
+  font-family: "JetBrainsMono Nerd Font", "Inter", sans-serif;
+  font-size: 13px;
+}
+
+.notification {
+  background: rgba(18, 18, 18, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 12px;
+  margin: 6px;
+}
+
+.notification.critical {
+  border-color: rgba(220, 100, 100, 0.5);
+}
+
+.notification-summary {
+  font-weight: bold;
+  color: #e6e6e6;
+}
+
+.notification-body {
+  color: #aaaaaa;
+}
+
+.control-center {
+  background: rgba(14, 14, 14, 0.94);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px;
+}
+
+.widget-title > label {
+  font-size: 15px;
+  font-weight: bold;
+  color: #e6e6e6;
+  padding: 6px 10px;
+}
+
+.widget-title > button {
+  background: rgba(200, 100, 100, 0.15);
+  color: #cc6666;
+  border-radius: 8px;
+  padding: 4px 12px;
+}
+
+.widget-title > button:hover {
+  background: rgba(200, 100, 100, 0.30);
+}
+
+.widget-dnd > switch {
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.widget-dnd > switch:checked {
+  background: rgba(200, 200, 200, 0.3);
+}
+
+.widget-dnd > switch slider {
+  background: #e6e6e6;
+  border-radius: 20px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  color: #e6e6e6;
+  padding: 10px 14px;
+  margin: 3px;
+  font-size: 12px;
+  min-width: 80px;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  background: rgba(255, 255, 255, 0.12);
+}

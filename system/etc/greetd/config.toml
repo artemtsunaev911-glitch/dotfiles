@@ -1,0 +1,6 @@
+[terminal]
+vt = 1
+
+[default_session]
+command = "tuigreet --time --asterisks --user-menu --cmd Hyprland"
+user = "greeter"

@@ -1,0 +1,10 @@
+theme = "bw"
+
+[editor]
+line-number = "relative"
+cursorline = true
+bufferline = "multiple"
+color-modes = true
+true-color = true
+mouse = true
+end-of-line-diagnostics = "hint"

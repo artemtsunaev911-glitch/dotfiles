@@ -1,0 +1,9 @@
+windowrulev2 = float,class:^(wofi)$
+windowrulev2 = center,class:^(wofi)$
+
+windowrulev2 = float,class:^(pavucontrol)$
+windowrulev2 = size 800 500,class:^(pavucontrol)$
+windowrulev2 = center,class:^(pavucontrol)$
+
+windowrulev2 = float,class:^(imv)$
+windowrulev2 = center,class:^(imv)$

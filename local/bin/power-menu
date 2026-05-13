@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+choice="$(printf '%s\n' \
+  "Lock" \
+  "Suspend" \
+  "Logout" \
+  "Reboot" \
+  "Shutdown" \
+  | wofi --dmenu --prompt "Power" --lines 5 --width 250 --height 220 --cache-file /dev/null)"
+
+case "$choice" in
+  Lock)     hyprlock ;;
+  Suspend)  systemctl suspend ;;
+  Logout)   hyprctl dispatch exit ;;
+  Reboot)   systemctl reboot ;;
+  Shutdown) systemctl poweroff ;;
+esac

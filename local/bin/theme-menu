@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+choice="$(printf '%s\n' bw sunset cyberpunk coffee japan mountains | wofi --dmenu --prompt 'Тема')"
+[ -z "$choice" ] && exit 0
+
+~/.local/bin/theme-set "$choice"

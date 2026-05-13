@@ -1,0 +1,33 @@
+inherits = "base16_default_dark"
+
+"ui.background" = { bg = "bg" }
+"ui.text" = "fg"
+"ui.cursor" = { fg = "bg", bg = "fg" }
+"ui.cursor.primary" = { fg = "bg", bg = "fg" }
+"ui.selection" = { bg = "sel" }
+"ui.statusline" = { fg = "fg", bg = "panel" }
+"ui.statusline.inactive" = { fg = "gray", bg = "panel" }
+"ui.linenr" = "gray"
+"ui.linenr.selected" = "fg"
+
+"comment" = { fg = "gray", modifiers = ["italic"] }
+"keyword" = "light"
+"operator" = "light"
+"type" = "light"
+"constructor" = "light"
+"constant" = "light"
+"constant.numeric" = "light"
+"string" = "fg"
+"function" = "fg"
+"variable" = "fg"
+"variable.parameter" = "fg"
+"namespace" = "fg"
+"tag" = "light"
+
+[palette]
+bg = "#101010"
+panel = "#181818"
+sel = "#2a2a2a"
+fg = "#e6e6e6"
+gray = "#8a8a8a"
+light = "#cfcfcf"
