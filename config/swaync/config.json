@@ -3,18 +3,34 @@
   "positionX": "right",
   "positionY": "top",
   "layer": "overlay",
+  "layer-shell": true,
+  "cssPriority": "application",
+
   "control-center-margin-top": 10,
   "control-center-margin-bottom": 10,
   "control-center-margin-right": 10,
+  "control-center-margin-left": 0,
+
   "notification-icon-size": 48,
+  "notification-body-image-height": 100,
+  "notification-body-image-width": 200,
+
   "timeout": 5,
   "timeout-low": 3,
   "timeout-critical": 0,
-  "control-center-width": 380,
-  "notification-window-width": 380,
+
+  "fit-to-screen": false,
+  "control-center-width": 400,
+  "control-center-height": 700,
+  "notification-window-width": 400,
+
   "keyboard-shortcuts": true,
+  "image-visibility": "when-available",
   "transition-time": 200,
+
+  "hide-on-clear": false,
   "hide-on-action": true,
+  "script-fail-notify": true,
 
   "widgets": [
     "title",
@@ -22,6 +38,7 @@
     "buttons-grid",
     "volume",
     "backlight",
+    "mpris",
     "notifications"
   ],
 
@@ -31,9 +48,11 @@
       "clear-all-button": true,
       "button-text": "Очистить"
     },
+
     "dnd": {
-      "text": "Не беспокоить"
+      "text": "🔕 Не беспокоить"
     },
+
     "buttons-grid": {
       "actions": [
         {
@@ -57,29 +76,33 @@
           "command": "~/.local/bin/wallpaper-menu"
         },
         {
-          "label": "⏻ Питание",
+          "label": "⚡ Режим",
+          "command": "~/.local/bin/rice-mode"
+        },
+        {
+          "label": "🔋 Питание",
+          "command": "~/.local/bin/power-mode"
+        },
+        {
+          "label": "⏻ Выключение",
           "command": "~/.local/bin/power-menu"
-        },
-        {
-          "label": "🚀 Произв.",
-          "command": "~/.local/bin/power-mode performance"
-        },
-        {
-          "label": "⚖ Баланс",
-          "command": "~/.local/bin/power-mode balanced"
-        },
-        {
-          "label": "🔋 Эконом",
-          "command": "~/.local/bin/power-mode power-saver"
         }
       ]
     },
+
     "volume": {
       "label": "🔊 Громкость"
     },
+
     "backlight": {
       "label": "☀ Яркость"
     },
+
+    "mpris": {
+      "image-size": 96,
+      "image-radius": 8
+    },
+
     "notifications": {
       "ignore-timeout": false,
       "hide-latest": false

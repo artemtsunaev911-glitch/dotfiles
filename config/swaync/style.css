@@ -77,3 +77,40 @@
 .widget-buttons-grid > flowbox > flowboxchild > button:hover {
   background: rgba(255, 255, 255, 0.12);
 }
+
+.widget-volume,
+.widget-backlight {
+  padding: 6px 4px;
+  color: #e6e6e6;
+}
+
+.widget-volume scale trough,
+.widget-backlight scale trough {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  min-height: 4px;
+}
+
+.widget-volume scale highlight,
+.widget-backlight scale highlight {
+  background: rgba(200, 200, 200, 0.6);
+  border-radius: 4px;
+}
+
+.widget-mpris-player {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 10px;
+  margin: 4px 0;
+}
+
+.widget-mpris-title {
+  font-weight: bold;
+  font-size: 13px;
+  color: #e6e6e6;
+}
+
+.widget-mpris-subtitle {
+  font-size: 12px;
+  color: #aaaaaa;
+}
