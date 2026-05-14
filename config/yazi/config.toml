@@ -1,0 +1,7 @@
+[ui]
+theme = "default"
+
+[[file.associations]]
+name = "*.txt"
+mime = "text/plain"
+use = "edit"

@@ -224,8 +224,8 @@ HELIX
 
 echo "$theme" > ~/.config/rice/current-theme
 
-if [[ -f "$HOME/Pictures/Wallpapers/$WALL" ]] && pgrep -x swww-daemon >/dev/null 2>&1; then
-  swww img "$HOME/Pictures/Wallpapers/$WALL" --transition-type fade --transition-duration 1.2
+if [[ -f "$HOME/Pictures/Wallpapers/$WALL" ]] && pgrep -x awww-daemon >/dev/null 2>&1; then
+  awww img "$HOME/Pictures/Wallpapers/$WALL" --transition-type fade --transition-duration 1.2
 fi
 
 pkill waybar 2>/dev/null || true

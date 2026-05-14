@@ -20,6 +20,8 @@
     "title",
     "dnd",
     "buttons-grid",
+    "volume",
+    "backlight",
     "notifications"
   ],
 
@@ -35,20 +37,24 @@
     "buttons-grid": {
       "actions": [
         {
-          "label": "󰤨 WiFi",
+          "label": "📶 WiFi",
           "command": "kitty -e nmtui"
         },
         {
-          "label": "󰂯 BT",
+          "label": "🔷 Bluetooth",
           "command": "kitty -e bluetui"
         },
         {
-          "label": "󰕾 Звук",
+          "label": "🔊 Звук",
           "command": "kitty -e pulsemixer"
         },
         {
-          "label": "󰌌 Тема",
+          "label": "🎨 Тема",
           "command": "~/.local/bin/theme-menu"
+        },
+        {
+          "label": "🖼 Обои",
+          "command": "~/.local/bin/wallpaper-menu"
         },
         {
           "label": "⏻ Питание",
@@ -67,6 +73,12 @@
           "command": "~/.local/bin/power-mode power-saver"
         }
       ]
+    },
+    "volume": {
+      "label": "🔊 Громкость"
+    },
+    "backlight": {
+      "label": "☀ Яркость"
     },
     "notifications": {
       "ignore-timeout": false,
