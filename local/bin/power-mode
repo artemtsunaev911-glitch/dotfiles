@@ -1,14 +1,30 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
-mode="${1:-balanced}"
+choice="${1:-}"
 
-case "$mode" in
-  performance|balanced|power-saver)
-    powerprofilesctl set "$mode"
-    notify-send "Режим питания" "$mode" --icon=battery
+if [[ -z "$choice" ]]; then
+  choice="$(printf '%s\n' \
+    'Экономный' \
+    'Сбалансированный' \
+    'Производительность' \
+    | wofi --dmenu --prompt 'Питание' --lines 3 --width 280 --height 160 --cache-file /dev/null)"
+fi
+
+case "$choice" in
+  power-saver|Экономный)
+    powerprofilesctl set power-saver
+    notify-send "Режим питания" "power-saver" --icon=battery
+    ;;
+  balanced|Сбалансированный)
+    powerprofilesctl set balanced
+    notify-send "Режим питания" "balanced" --icon=battery
+    ;;
+  performance|Производительность)
+    powerprofilesctl set performance
+    notify-send "Режим питания" "performance" --icon=battery
     ;;
   *)
-    echo "Usage: power-mode [performance|balanced|power-saver]"
     exit 1
     ;;
 esac
