@@ -1,0 +1,8 @@
+@define-color base {{color0}};
+@define-color text {{color7}};
+@define-color subtext {{color15}};
+@define-color accent {{color4}};
+@define-color accent2 {{color5}};
+@define-color warning {{color3}};
+@define-color critical {{color1}};
+@define-color good {{color2}};

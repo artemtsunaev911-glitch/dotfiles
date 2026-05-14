@@ -1,7 +1,7 @@
 [manager]
 prepend_keymap = [
-  { on = [ "g", "r" ], run = "cd /", desc = "Go root" },
-  { on = [ "g", "h" ], run = "cd ~", desc = "Go home" },
-  { on = [ "g", "d" ], run = "cd ~/Downloads", desc = "Go downloads" },
-  { on = [ "g", "c" ], run = "cd ~/.config", desc = "Go config" },
+  { on = [ "g", "h" ], run = "cd ~", desc = "Home" },
+  { on = [ "g", "d" ], run = "cd ~/Downloads", desc = "Downloads" },
+  { on = [ "g", "c" ], run = "cd ~/.config", desc = "Config" },
+  { on = [ "g", "t" ], run = "cd ~/dotfiles", desc = "Dotfiles" }
 ]

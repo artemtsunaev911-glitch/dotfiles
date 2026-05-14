@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+WALLS_DIR="$HOME/Pictures/Wallpapers"
+
+choice="$(find "$WALLS_DIR" -maxdepth 1 -type f \( -iname '*.jpg' -o -iname '*.png' -o -iname '*.webp' \) -printf '%f\n' | sort | wofi --dmenu --prompt 'Обои')"
+
+[ -z "$choice" ] && exit 0
+
+~/.local/bin/theme-set "$WALLS_DIR/$choice"

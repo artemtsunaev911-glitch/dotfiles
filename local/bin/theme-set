@@ -3,231 +3,41 @@ set -euo pipefail
 
 theme="${1:-bw}"
 
-case "$theme" in
-  bw)
-    WALL="bw.jpg"
-    HELIX_THEME="bw"
-    BASE='rgba(18,18,18,0.88)'
-    TEXT='rgba(235,235,235,1)'
-    SUBTEXT='rgba(170,170,170,1)'
-    ACCENT='rgba(220,220,220,1)'
-    ACCENT2='rgba(150,150,150,1)'
-    WARNING='rgba(210,190,120,1)'
-    CRITICAL='rgba(220,110,110,1)'
-    GOOD='rgba(150,200,150,1)'
-    ACTIVE1='rgba(dddddddd)'
-    ACTIVE2='rgba(888888dd)'
-    INACTIVE='rgba(333333aa)'
-    ;;
-  sunset)
-    WALL="sunset.jpg"
-    HELIX_THEME="gruvbox"
-    BASE='rgba(28,16,16,0.90)'
-    TEXT='rgba(255,225,210,1)'
-    SUBTEXT='rgba(205,165,150,1)'
-    ACCENT='rgba(255,140,110,1)'
-    ACCENT2='rgba(255,185,100,1)'
-    WARNING='rgba(255,210,120,1)'
-    CRITICAL='rgba(255,90,90,1)'
-    GOOD='rgba(150,210,140,1)'
-    ACTIVE1='rgba(ff8c6eee)'
-    ACTIVE2='rgba(ffb964ee)'
-    INACTIVE='rgba(442222aa)'
-    ;;
-  cyberpunk)
-    WALL="cyberpunk.jpg"
-    HELIX_THEME="tokyonight"
-    BASE='rgba(10,0,18,0.92)'
-    TEXT='rgba(225,245,255,1)'
-    SUBTEXT='rgba(170,120,220,1)'
-    ACCENT='rgba(0,245,255,1)'
-    ACCENT2='rgba(255,0,220,1)'
-    WARNING='rgba(255,220,0,1)'
-    CRITICAL='rgba(255,70,120,1)'
-    GOOD='rgba(0,255,140,1)'
-    ACTIVE1='rgba(00f5ffee)'
-    ACTIVE2='rgba(ff00dcee)'
-    INACTIVE='rgba(1f0f2faa)'
-    ;;
-  coffee)
-    WALL="coffee.jpg"
-    HELIX_THEME="gruvbox"
-    BASE='rgba(28,18,10,0.90)'
-    TEXT='rgba(232,214,190,1)'
-    SUBTEXT='rgba(185,160,130,1)'
-    ACCENT='rgba(201,169,110,1)'
-    ACCENT2='rgba(150,105,70,1)'
-    WARNING='rgba(220,185,100,1)'
-    CRITICAL='rgba(200,95,70,1)'
-    GOOD='rgba(145,185,120,1)'
-    ACTIVE1='rgba(c9a96eee)'
-    ACTIVE2='rgba(8b6343ee)'
-    INACTIVE='rgba(2c1a0eaa)'
-    ;;
-  japan)
-    WALL="japan.jpg"
-    HELIX_THEME="kanagawa"
-    BASE='rgba(26,18,20,0.90)'
-    TEXT='rgba(236,220,220,1)'
-    SUBTEXT='rgba(190,160,160,1)'
-    ACCENT='rgba(232,170,170,1)'
-    ACCENT2='rgba(176,96,128,1)'
-    WARNING='rgba(220,190,120,1)'
-    CRITICAL='rgba(210,80,80,1)'
-    GOOD='rgba(140,190,160,1)'
-    ACTIVE1='rgba(e8aaaeee)'
-    ACTIVE2='rgba(b06080ee)'
-    INACTIVE='rgba(2a1a1aaa)'
-    ;;
-  mountains)
-    WALL="mountains.jpg"
-    HELIX_THEME="nord"
-    BASE='rgba(12,20,28,0.90)'
-    TEXT='rgba(205,220,235,1)'
-    SUBTEXT='rgba(145,170,190,1)'
-    ACCENT='rgba(126,168,201,1)'
-    ACCENT2='rgba(74,122,155,1)'
-    WARNING='rgba(200,180,110,1)'
-    CRITICAL='rgba(200,90,90,1)'
-    GOOD='rgba(125,185,150,1)'
-    ACTIVE1='rgba(7ea8c9ee)'
-    ACTIVE2='rgba(4a7a9bee)'
-    INACTIVE='rgba(0f1e2aaa)'
-    ;;
-  *)
-    echo "unknown theme: $theme"
-    exit 1
-    ;;
-esac
-
-mkdir -p ~/.config/waybar ~/.config/wofi ~/.config/hypr ~/.config/helix/themes ~/.config/rice
-
-cat > ~/.config/waybar/colors.css <<COLORS
-@define-color base $BASE;
-@define-color text $TEXT;
-@define-color subtext $SUBTEXT;
-@define-color accent $ACCENT;
-@define-color accent2 $ACCENT2;
-@define-color warning $WARNING;
-@define-color critical $CRITICAL;
-@define-color good $GOOD;
-COLORS
-
-cat > ~/.config/wofi/style.css <<WOFI
-window {
-  margin: 0;
-  padding: 12px;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 14px;
-  background-color: $BASE;
-}
-
-#outer-box {
-  margin: 0;
-  padding: 8px;
-  background-color: transparent;
-}
-
-#input {
-  margin: 0 0 10px 0;
-  padding: 10px 12px;
-  border: none;
-  border-radius: 10px;
-  background-color: rgba(255,255,255,0.06);
-  color: $TEXT;
-}
-
-#inner-box {
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-}
-
-#entry {
-  padding: 10px 12px;
-  margin: 4px 0;
-  border-radius: 10px;
-  background-color: transparent;
-  color: $TEXT;
-}
-
-#entry:selected {
-  background-color: rgba(255,255,255,0.10);
-  color: $TEXT;
-}
-
-#text {
-  margin: 0 0 0 8px;
-  color: inherit;
-}
-
-image {
-  margin-right: 8px;
-}
-WOFI
-
-cat > ~/.config/hypr/theme.conf <<HYPR
-general {
-    col.active_border = $ACTIVE1 $ACTIVE2 45deg
-    col.inactive_border = $INACTIVE
-}
-HYPR
-
-cat > ~/.config/helix/themes/bw.toml <<'HELIXBW'
-inherits = "base16_default_dark"
-
-"ui.background" = { bg = "bg" }
-"ui.text" = "fg"
-"ui.cursor" = { fg = "bg", bg = "fg" }
-"ui.cursor.primary" = { fg = "bg", bg = "fg" }
-"ui.selection" = { bg = "sel" }
-"ui.statusline" = { fg = "fg", bg = "panel" }
-"ui.statusline.inactive" = { fg = "gray", bg = "panel" }
-"ui.linenr" = "gray"
-"ui.linenr.selected" = "fg"
-
-"comment" = { fg = "gray", modifiers = ["italic"] }
-"keyword" = "light"
-"operator" = "light"
-"type" = "light"
-"constructor" = "light"
-"constant" = "light"
-"constant.numeric" = "light"
-"string" = "fg"
-"function" = "fg"
-"variable" = "fg"
-"variable.parameter" = "fg"
-"namespace" = "fg"
-"tag" = "light"
-
-[palette]
-bg = "#101010"
-panel = "#181818"
-sel = "#2a2a2a"
-fg = "#e6e6e6"
-gray = "#8a8a8a"
-light = "#cfcfcf"
-HELIXBW
-
-cat > ~/.config/helix/config.toml <<HELIX
-theme = "$HELIX_THEME"
-
-[editor]
-line-number = "relative"
-cursorline = true
-bufferline = "multiple"
-color-modes = true
-true-color = true
-mouse = true
-end-of-line-diagnostics = "hint"
-HELIX
-
-echo "$theme" > ~/.config/rice/current-theme
-
-if [[ -f "$HOME/Pictures/Wallpapers/$WALL" ]] && pgrep -x awww-daemon >/dev/null 2>&1; then
-  awww img "$HOME/Pictures/Wallpapers/$WALL" --transition-type fade --transition-duration 1.2
+# Если передали файл картинки напрямую
+if [[ -f "$theme" ]]; then
+  WALLPAPER="$theme"
+else
+  WALLPAPER=""
+  for candidate in \
+    "$HOME/Pictures/Wallpapers/${theme}.jpg" \
+    "$HOME/Pictures/Wallpapers/${theme}.png" \
+    "$HOME/dotfiles/assets/wallpapers/${theme}.jpg" \
+    "$HOME/dotfiles/assets/wallpapers/${theme}.png"
+  do
+    if [[ -f "$candidate" ]]; then
+      WALLPAPER="$candidate"
+      break
+    fi
+  done
 fi
 
+if [[ -z "$WALLPAPER" ]]; then
+  echo "Wallpaper not found for: $theme"
+  exit 1
+fi
+
+# Генерируем палитру и применяем шаблоны
+wallust run "$WALLPAPER"
+
+# Ставим обои
+if ! pgrep -x awww-daemon >/dev/null 2>&1; then
+  awww-daemon >/dev/null 2>&1 &
+  sleep 0.5
+fi
+
+awww img "$WALLPAPER" --transition-type fade --transition-duration 1.2
+
+# Перезапускаем
 pkill waybar 2>/dev/null || true
 waybar >/dev/null 2>&1 &
 disown
@@ -237,3 +47,9 @@ swaync >/dev/null 2>&1 &
 disown
 
 hyprctl reload >/dev/null 2>&1 || true
+
+# Запоминаем
+mkdir -p ~/.config/rice
+echo "$theme" > ~/.config/rice/current-theme
+
+notify-send "Тема" "Применена: $theme"

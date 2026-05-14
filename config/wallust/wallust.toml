@@ -1,0 +1,19 @@
+[options]
+backend = "kmeans"
+saturation = 50
+
+[[entry]]
+template = "templates/hyprland.conf"
+target = "~/.config/hypr/theme.conf"
+
+[[entry]]
+template = "templates/colors.css"
+target = "~/.config/waybar/colors.css"
+
+[[entry]]
+template = "templates/wofi.css"
+target = "~/.config/wofi/style.css"
+
+[[entry]]
+template = "templates/kitty-theme.conf"
+target = "~/.config/kitty/current-theme.conf"
